@@ -6,24 +6,26 @@ const { graphqlHTTP } = require( 'express-graphql' );
 
 const schema = buildSchema( `
     type Query {
-     getWelcome: String 
-     getEmployees: String
+     getWelcome(name: String): String 
+     getResponse : Boolean
     }  
 
 `);
 
-const getWelcome = () => {
-    return "hello world";
+const getWelcome = ( args ) => { 
+    return "hello world " +  args.name;
 };
 
-const getEmployees = () => {
-    return "hello employee";
+const getResponse = () => {
+    return true;
 }
+
+
 
 const root = {
     //properties(Schema) = functions
     getWelcome: getWelcome,
-    getEmployees: getEmployees
+    getResponse : getResponse
 }
 
 app.use( '/graphql', graphqlHTTP( {

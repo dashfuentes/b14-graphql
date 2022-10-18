@@ -1,0 +1,9 @@
+# query getWelcome($name : String) {
+  
+#   	getWelcome(name : $name) 
+  
+# }
+
+# query getResponse {
+#   getResponse
+# }
