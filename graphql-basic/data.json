@@ -1,0 +1,22 @@
+{
+	"courses": [
+		{
+			"id": 1,
+			"title": "GraphQL basics",
+			"level": "Jr/Semi-Senior",
+            "date" : "10/10/2021"
+		},
+		{
+			"id": 2,
+			"title": "Microservices Node JS",
+			"level": "Senior",
+            "date" : "10/10/2021"
+		},
+		{
+			"id": 3,
+			"title": "Mongo DB",
+			"level": "Jr",
+            "date" : "10/10/2021"
+		}
+	]
+}
