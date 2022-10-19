@@ -70,7 +70,8 @@ const findCourseById = ( { id } ) => {
 
 const deleteCourse =  ( { id } ) => {
     let courseId = id;
-    var getIndex = courses.findIndex( line => id === courseId );
+    var getIndex = courses.findIndex( line => line.id === courseId );
+    console.log(getIndex)
     //remove the object
     courses.splice(getIndex, 1)
     //return courses []
