@@ -10,12 +10,14 @@ const schema = buildSchema( `
     type Query {
      getWelcome(name: String): String 
      getCourses : [Course]
+     findCourseById(id: Int): Course  
    
     }  
 
     type Mutation {
         addCourse(id: Int, title: String!, level: String , date: String) : [Course]
         updateCourse(id: Int, title: String!, level: String , date: String): Course
+        deleteCourse(id: Int): [Course]
     }
 
     type Course {
@@ -60,12 +62,29 @@ const updateCourse = ( { id, title, level, date } ) => {
     return courses.find( course => course.id == id );
 }
 
+const findCourseById = ( { id } ) => {
+    return courses.find(course => course.id ==  id)
+}
+
+//Delete
+
+const deleteCourse =  ( { id } ) => {
+    let courseId = id;
+    var getIndex = courses.findIndex( line => id === courseId );
+    //remove the object
+    courses.splice(getIndex, 1)
+    //return courses []
+    return courses
+}
+
 const root = {
     //properties(Schema) = functions
     getWelcome: getWelcome,
     getCourses: getCourses,
     addCourse: addCourse,
-    updateCourse: updateCourse
+    updateCourse: updateCourse,
+    findCourseById: findCourseById,
+    deleteCourse: deleteCourse
 }
 
 app.use( '/graphql', graphqlHTTP( {
