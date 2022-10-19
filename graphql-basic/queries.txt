@@ -22,3 +22,17 @@ mutation addCourse($id: Int, $title: String!, $level: String, $date: String) {
   "level": "Senior",
   "date": "18/10/2022"
 }
+
+# mutation updateCourse ( $id: Int, $title: String!, $level: String, $date: String) {
+#   updateCourse(id: $id, title: $title, level: $level, date: $date){
+#     title
+#   }
+# }
+
+mutation delete ($id: Int){
+  
+  	deleteCourse(id: $id){
+    title
+    date
+  }
+}
