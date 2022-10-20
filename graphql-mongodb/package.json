@@ -1,0 +1,24 @@
+{
+  "name": "graphql-mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js --exec babel-node",
+    "build": "babel src -d dist --source-maps",
+    "production": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.1",
+    "@babel/node": "^7.19.1",
+    "@babel/preset-env": "^7.19.4",
+    "express": "^4.18.1",
+    "express-graphql": "^0.12.0",
+    "mongoose": "^6.6.5"
+  }
+}

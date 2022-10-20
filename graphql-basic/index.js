@@ -3,7 +3,7 @@ const app = express();
 
 const { buildSchema } = require( 'graphql' );
 const { graphqlHTTP } = require( 'express-graphql' );
-const {courses} = require('./data.json')
+const { courses } = require('./data.json')
 
 const schema = buildSchema( `
 
