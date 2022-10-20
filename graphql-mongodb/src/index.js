@@ -1,13 +1,14 @@
 import express from "express";
 import { connect } from './database'
-import {graphqlHTTP} from "express-graphql"
+import { graphqlHTTP } from "express-graphql"
+import schema from './schema'
 
 
 const app = express();
 connect();
 
 app.use( '/graphl-playground', graphqlHTTP( {
-    schema: "",
+    schema: schema,
     graphiql: true
 }))
 
