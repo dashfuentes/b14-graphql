@@ -13,7 +13,6 @@ export async function connect() {
 	}
 }
 
-// module.exports = connect()
 
 //**
 // Use module.export = variable sin utilizar en el package.json el property "type": "module" / import use require

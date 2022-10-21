@@ -36,3 +36,19 @@ mutation delete ($id: Int){
     date
   }
 }
+
+
+mutation pepito($title: String!, $author: String, $date: String, $version: Int) {
+  createBook(input: {title: $title, author: $author, date: $date, version: $version}) {
+    _id
+    title
+    author
+  }
+}
+
+query getBooks {
+  getBooks {
+    _id
+    title
+  }
+}
