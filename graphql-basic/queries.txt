@@ -52,3 +52,22 @@ query getBooks {
     title
   }
 }
+
+mutation updateBook($title: String!, $author: String, $date: String, $version: Int, $_id: ID) {
+  
+  updateBook(input: {title: $title, author: $author, date: $date, version: $version},_id: $_id) {
+    _id
+    author
+    date
+    version
+  }
+}
+
+
+{
+  "_id": "6265be222547fc75496b1a14",
+  "title": "Apollo client",
+  "author": "Test Client",
+  "date": "12/12/2022",
+  "version": 2
+}

@@ -10,6 +10,7 @@ type Query {
 }
     type Mutation {
             createBook(input: BookInput):  Book
+            updateBook(input: BookInput, _id : ID) : Book
     }
 
 type Book {
