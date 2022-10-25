@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-export const GET_WHEATHER_QUERY = gql`
+export const GET_WEATHER_QUERY = gql`
 	query getCityByName($name: String!) {
 		getCityByName(name: $name) {
 			name
@@ -9,7 +9,7 @@ export const GET_WHEATHER_QUERY = gql`
                 lon
                 lat
             }
-			wheather {
+			weather {
 				summary {
 					title
 					description
@@ -22,6 +22,9 @@ export const GET_WHEATHER_QUERY = gql`
                     visibility
                     humidity
                 }
+				wind {
+					speed
+				}
 			}
 		}
 	}
