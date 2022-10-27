@@ -4,8 +4,6 @@ import { GET_WEATHER_QUERY } from "../graphql/Queries";
 
 const Home = () => {
 
-    debugger
-
     const [citySearch, setCitySearched] = useState( "" )
     
     const [getWheatherInfo, { data, error }] = useLazyQuery( GET_WEATHER_QUERY, {
@@ -17,7 +15,6 @@ const Home = () => {
     if ( data ) {
         console.log( data ) 
     }
-   
     
   return (
       <div className='home'>

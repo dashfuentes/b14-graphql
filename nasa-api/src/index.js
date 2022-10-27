@@ -4,11 +4,10 @@ const path = require('path')
 
 //Initializations
 const app = express();
-console.log( app )   //// {'port': 4000. views: '//http://localhost:4000/views'}   app.get.port
+   //// {'port': 4000. views: '//http://localhost:4000/views'}   app.get.port
 
 //Settings
 app.set( 'port', process.env.PORT || 4000 );
-console.log(app.get('port')) //4000
 
 //tell node where is the view folder?
 app.set( 'views', path.join( __dirname, 'views' ) ) //http://localhost:4000/views
@@ -28,7 +27,7 @@ app.set('view engine', '.hbs')
 app.use( require( './routes/index' ) );
 
 //tell node where is the public folder
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 //Start express engine
 app.listen( app.get( 'port' ), () => {
