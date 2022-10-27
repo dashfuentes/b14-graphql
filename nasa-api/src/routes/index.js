@@ -9,6 +9,10 @@ router.get( '/', ( req, res ) => {
 router.post( '/get-image', ( req, res ) => {
     console.log( 'posting.....', req.body )
     const { lon, lat } = req.body;
+    ///Transform new date() to YYYY-MM-DD
+    const date = req.body.date ? req.body.date : new Date();
+
+
      
     return res.json({message: 'success'})
 
