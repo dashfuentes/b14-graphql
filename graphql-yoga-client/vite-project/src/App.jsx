@@ -12,7 +12,7 @@ function App() {
 			<div className="container p-4">
 				<Routes>
 					<Route path="/" element={<MessageList />} />
-					<Route path="/create-message" element={<MessageForm />} />
+					<Route path="/new-message" element={<MessageForm />} />
 				</Routes>
 			</div>
 		</Router>
