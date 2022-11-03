@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const uri =
 	"mongodb+srv://dashfuentes:Test123@cluster0.6ckqtkq.mongodb.net/?retryWrites=true&w=majority";
+	
 
 mongoose
 	.connect(uri, {

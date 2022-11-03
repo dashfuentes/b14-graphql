@@ -5,7 +5,12 @@ const Mutation = {
         const newMessage = new Message( { title, content, author } );
         return await newMessage.save()
 
-    }
+    },
+    deleteMessage: async ( _, { id }) => {
+        await Message.findByIdAndRemove( id );
+        return await Message.find();
+
+      }
 }
 
 export default Mutation;
