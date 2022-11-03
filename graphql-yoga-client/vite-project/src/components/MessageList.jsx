@@ -42,8 +42,12 @@ export default function MessageList() {
 			<div className="col-md-6 flex-lg-row w-100 d-flex flex-wrap">
 				{data &&
 					data.getMessages.map(({ _id, title, author, content }) => (
-						<div className="card m-2 w-25" data-id={_id}>
+						<div className="card m-2 w-25" data-id={_id} onClick={e =>{}}>
 							<div className="card-body p-0">
+								<div>
+								<img src="https://i.ytimg.com/vi/xCI1X31n0Z0/maxresdefault.jpg" alt="..." class="img-thumbnail"/>
+								</div>
+							
 								<div>
 									<h4 className="font-weight-bold text-md-">
 										Title: <span> {title}</span>

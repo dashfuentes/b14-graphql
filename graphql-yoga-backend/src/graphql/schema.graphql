@@ -6,6 +6,8 @@ type Query {
 type Mutation {
     createMessage(title: String!, content: String!, author: String!): Message
     deleteMessage(id: ID!) : [Message]
+     updateMessage(input: MessageInput, _id : ID!) : Message
+
 }
 
 type Message {
@@ -14,5 +16,12 @@ type Message {
     content: String!
     author: String!
 }
+
+input MessageInput{
+    title: String!
+    content: String!
+    author: String  
+}
+
 
 

@@ -10,7 +10,10 @@ const Mutation = {
         await Message.findByIdAndRemove( id );
         return await Message.find();
 
-      }
+    },
+    async updateMessage( _, { input, _id } ) {
+        return await Message.findByIdAndUpdate(_id,input, {new: true})
+    }
 }
 
 export default Mutation;
