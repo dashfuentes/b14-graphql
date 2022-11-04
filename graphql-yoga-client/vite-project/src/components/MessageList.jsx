@@ -44,7 +44,7 @@ export default function MessageList() {
 				{data &&
 					data.getMessages.map(({ _id, title, author, content }) => (
 						<Link className="card m-2 w-25" data-id={_id} to='/new-message'
-							state={{ id: _id, title: title, author: author, content: content }}
+							state={{ _id: _id, title: title, author: author, content: content }}
 						>
 							<div className="card-body p-0">
 								<div>
