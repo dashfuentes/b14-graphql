@@ -1,5 +1,6 @@
 import React from "react";
 import { gql, useQuery, useMutation } from "@apollo/client";
+import {Link} from 'react-router-dom'
 
 export const GET_MESSAGES = gql`
 	{
@@ -42,7 +43,9 @@ export default function MessageList() {
 			<div className="col-md-6 flex-lg-row w-100 d-flex flex-wrap">
 				{data &&
 					data.getMessages.map(({ _id, title, author, content }) => (
-						<div className="card m-2 w-25" data-id={_id} onClick={e =>{}}>
+						<Link className="card m-2 w-25" data-id={_id} to='/new-message'
+							state={{ id: _id, title: title, author: author, content: content }}
+						>
 							<div className="card-body p-0">
 								<div>
 								<img src="https://i.ytimg.com/vi/xCI1X31n0Z0/maxresdefault.jpg" alt="..." class="img-thumbnail"/>
@@ -69,7 +72,7 @@ export default function MessageList() {
 							>
 								Delete
 							</button>
-						</div>
+						</Link>
 					))}
 			</div>
 		</div>

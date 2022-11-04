@@ -1,13 +1,23 @@
 import React, {useState} from "react";
 import { gql, useMutation } from "@apollo/client";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function MessageForm() {
 
-  const navigate = useNavigate();
+	const navigate = useNavigate();
+	const location = useLocation();
   const [title, setTitle] = useState( "" );
   const [content, setContent] = useState( "" );
-  const [author, setAuthor] = useState( "" );
+	const [author, setAuthor] = useState( "" );
+
+	const messagetId = location.state.id;
+	console.log( messagetId );
+	const messageTitle = location.state.title
+	console.log(messageTitle)
+	const messagecContent = location.state.content
+	const messageAuthor = location.state.author
+
+
   
 	const CREATE_MESSAGE = gql`
 		mutation createMessage(
@@ -40,7 +50,7 @@ export default function MessageForm() {
 								<label for="title" className="form-label">
 									Title
 								</label>
-								<input type="text" className="form-control" value= {title} onChange={ (e) => setTitle(e.target.value)} />
+								<input type="text" className="form-control" value= {messageTitle ? messageTitle : title} onChange={ (e) => setTitle(e.target.value)} />
 							</div>
 							<div className="mb-3">
 								<label for="author" className="form-label">
